@@ -28,6 +28,9 @@ parameters           toppar_water_ions.prm
 exclude              scaled1-4
 1-4scaling           1.0
 
+# constrain hydrogen atoms
+rigidbonds           all
+
 timestep             1.0
 fullElectFrequency   2
 
