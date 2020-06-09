@@ -1,0 +1,28 @@
+# Log started on 06/08/2020 [mm/dd/yyyy] at 14:51:21
+chamber -top *.rtf -param *.prm -psf apoa1_merge.psf -pdb apoa1_merge.pdb 
+chamber -top *.rtf -param *.prm -psf apoa1_merge.psf -pdb apoa1_merge.pdb -crd apoa1_merge.crd
+chamber -top *.rtf -param *.prm -psf apoa1_merge.psf -crd apoa1_merge.crd
+# Log started on 06/08/2020 [mm/dd/yyyy] at 15:01:00
+chamber -top *.rtf -param *.prm -psf apoa1_merge.psf -crd apoa1_merge.crd
+ls
+ls ../NAMD
+chamber -top *.rtf -param par_all36_lipid.prm par_all36m_prot.prm -psf apoa1_merge.psf -crd apoa1_merge.crd
+chamber -top *.rtf -param par_all36_lipid.prm par_all36m_prot.prm -psf apoa1_merge.psf -crd apoa1_merge.crd
+x = 1
+chamber -top *.rtf -param par_all36_lipid.prm -param par_all36m_prot.prm -psf apoa1_merge.psf -crd apoa1_merge.crd
+# Log started on 06/08/2020 [mm/dd/yyyy] at 15:08:44
+chamber -top *.rtf -param par_all36_lipid.prm -param par_all36m_prot.prm -psf apoa1_merge.psf -crd apoa1_merge.pdb
+chamber -top *.rtf -param par_all36_lipid.prm -param par_all36m_prot.prm -param toppar_water_ions.prm -psf apoa1_merge.psf -crd apoa1_merge.pdb
+chamber -top *.rtf -param par_all36_lipid.prm -param par_all36m_prot.prm -toppar toppar_water_ions.prm -psf apoa1_merge.psf -crd apoa1_merge.pdb
+chamber -top *.rtf -param par_all36_lipid.prm -param par_all36m_prot.prm -param waters.prm -psf apoa1_merge.psf -crd apoa1_merge.pdb
+outparm
+outparm apoa1_merge.parm7 apoa1_merge.rst7
+# Log started on 06/09/2020 [mm/dd/yyyy] at 10:59:13
+chamber
+chamber -help
+chamber -top *.rtf -param par_all36_lipid.prm -param par_all36m_prot.prm -param waters.prm -psf apoa1_merge.psf -crd apoa1_merge.pdb -box 108.8612,108.8612,77.758
+outparm apoa1_merge.parm7 apoa1_merge.rst7
+outparm apoa1_merge.parm7 apoa1_merge.rst7
+# Log started on 06/09/2020 [mm/dd/yyyy] at 13:46:36
+chamber -top *.rtf -param par_all36_lipid.prm -param par_all36m_prot.prm -param waters.prm -psf apoa1_merge_2.psf -crd apoa1_merge_2.pdb -box 108.8612,108.8612,77.758
+outparm apoa1_merge_2.parm7 apoa1_merge_2.rst7
