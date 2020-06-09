@@ -1,0 +1,68 @@
+;Apoa1
+;NVE, MTS
+;Reference for using CHARMM FF in gmx:
+;http://manual.gromacs.org/documentation/2018/user-guide/force-fields.html#charmm
+
+;Run control
+integrator              = md
+dt                      = 0.001
+tinit                   = 0
+nsteps                  = 100000
+comm-mode               = Linear
+nstcomm                 = 1000
+
+;Langevin dynamics
+;bd-fric                 = 0
+;ld-seed                 = -1
+
+;Output control
+nstxout                 = 0
+nstvout                 = 0
+nstfout                 = 0
+nstlog                  = 1000
+nstcalcenergy           = 1000
+nstenergy               = 1000
+nstlist                 = 400
+
+;Neighbor searching
+cutoff-scheme           = Verlet
+;Calculate long-range forces every 2 steps (multi-time stepping)
+;nstcalclr is obsolete, so no MTS
+;nstcalclr               = 2
+verlet-buffer-tolerance = -1
+rlist                   = 1.35
+pbc                     = xyz
+periodic-molecules      = no
+
+;Electrostatics
+coulombtype             = PME
+coulomb-modifier        = Potential-shift-Verlet
+rcoulomb                = 1.2
+
+;VdW
+vdwtype                 = Cut-off
+vdw-modifier            = force-switch
+rvdw-switch             = 1.0
+rvdw                    = 1.2
+DispCorr                = no
+
+;Bonds
+constraint-algorithm    = LINCS
+lincs-iter              = 2
+constraints             = h-bonds
+continuation            = no
+morse                   = no
+
+;Implicit solvent
+implicit-solvent        = no
+
+;Pressure coupling
+pcoupl                  = no
+
+;Temperature coupling
+tcoupl                  = no
+
+;Velocity generation
+gen-vel                 = yes
+gen-temp                = 300
+gen-seed                = 74269
