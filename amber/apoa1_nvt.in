@@ -1,4 +1,4 @@
-NVT_Equilibration_MTS
+NVT_Equilibration
   &cntrl
     imin=0,                 !No minimization
     ntx=1,                  !Read coordinates only
