@@ -26,10 +26,11 @@ system = psf.createSystem(param, nonbondedMethod=PME, nonbondedCutoff=12*u.angst
 # get all nonbonded forces
 nonbonded = [f for f in system.getForces() if isinstance(f, NonbondedForce)][0]
 integrator = LangevinIntegrator(300.0*u.kelvin, 1/u.picosecond, 0.001*u.picoseconds)
+#integrator = VerletIntegrator(0.001*u.picoseconds)
 # setup PME grid parameters
 nonbonded.setPMEParameters(0, 108, 108, 80)
 simulation = Simulation(psf.topology, system, integrator, platform, properties)
 simulation.context.setPositions(pdb.positions)
-simulation.reporters.append(StateDataReporter(f'output/nanma_openmm_nvt_{precision}.log', 5000, step=True, time=True, remainingTime=True, potentialEnergy=True, temperature=True, totalSteps=step, speed=True))
+simulation.reporters.append(StateDataReporter(f'output/nanma_openmm_nvt_{precision}.log', 5000, step=True, time=True, remainingTime=True, potentialEnergy=True, kineticEnergy=True, totalEnergy=True, temperature=True, totalSteps=step, speed=True))
 
 simulation.step(step)

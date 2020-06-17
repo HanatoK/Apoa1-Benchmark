@@ -52,6 +52,6 @@ integrator = MTSLangevinIntegrator(temperature=300.0*u.kelvin, friction=1/u.pico
 nonbonded.setPMEParameters(0, 108, 108, 80)
 simulation = Simulation(psf.topology, system, integrator, platform, properties)
 simulation.context.setPositions(pdb.positions)
-simulation.reporters.append(StateDataReporter(f'output/nanma_openmm_nvt_mts_{precision}.log', 5000, step=True, time=True, remainingTime=True, potentialEnergy=True, temperature=True, totalSteps=step, speed=True))
+simulation.reporters.append(StateDataReporter(f'output/nanma_openmm_nvt_mts_{precision}.log', 5000, step=True, time=True, remainingTime=True, potentialEnergy=True, kineticEnergy=True, totalEnergy=True, temperature=True, totalSteps=step, speed=True))
 
 simulation.step(step)
