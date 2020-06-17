@@ -20,10 +20,18 @@ PMEGridSizeY         108
 PMEGridSizeZ         80
 
 # Constant Temperature Control
-langevin             on    ;# do langevin dynamics
-langevinDamping      1     ;# damping coefficient (gamma) of 1/ps
-langevinTemp         300
-langevinHydrogen     on
+if {1} {
+    langevin             on    ;# do langevin dynamics
+    langevinDamping      1     ;# damping coefficient (gamma) of 1/ps
+    langevinTemp         300
+    langevinHydrogen     on
+}
+if {0} {
+    stochRescale         on
+    stochRescalePeriod   1
+    stochRescaleFreq     100   ;# in accordance with pairlistspercyle
+    stochRescaleTemp     300
+}
 
 structure            apoa1_merge.psf
 paraTypeCharmm       on
