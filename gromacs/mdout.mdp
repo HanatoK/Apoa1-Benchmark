@@ -2,7 +2,7 @@
 ;	File 'mdout.mdp' was generated
 ;	By user: quinolone (1001)
 ;	On host: summersnow
-;	At date: Mon Jun  8 13:18:58 2020
+;	At date: Thu Jun 25 15:59:06 2020
 ;
 ;	Created by:
 ;	                :-) GROMACS - gmx grompp, 2020.2-MODIFIED (-:
@@ -11,7 +11,7 @@
 ;	Data prefix:  /usr/local/gromacs
 ;	Working dir:  /home/quinolone/HDD/Docs/git/apoa1/gromacs
 ;	Command line:
-;	  gmx grompp -f apoa1_nvt.mdp -c apoa1_merge.gro -p apoa1_merge.top -o apoa1_nvt.tpr -maxwarn 1
+;	  gmx grompp -f apoa1_nve.mdp -c apoa1_merge.gro -p apoa1_merge.top -o apoa1_nve.tpr -maxwarn 1
 
 ; VARIOUS PREPROCESSING OPTIONS
 ; Preprocessor information: use cpp syntax.
@@ -24,8 +24,8 @@ define                   =
 integrator               = md
 ; Start time and timestep in ps
 tinit                    = 0
-dt                       = 0.001
-nsteps                   = 500000
+dt                       = 0.002
+nsteps                   = 100000
 ; For exact run continuation or redoing part of a run
 init-step                = 0
 ; Part index is updated automatically on checkpointing (keeps files separate)
@@ -33,7 +33,7 @@ simulation-part          = 1
 ; mode for center of mass motion removal
 comm-mode                = Linear
 ; number of steps for center of mass motion removal
-nstcomm                  = 5000
+nstcomm                  = 1000
 ; group(s) for center of mass motion removal
 comm-grps                = 
 
@@ -63,9 +63,9 @@ nstxout                  = 0
 nstvout                  = 0
 nstfout                  = 0
 ; Output frequency for energies to log file and energy file
-nstlog                   = 5000
-nstcalcenergy            = 5000
-nstenergy                = 5000
+nstlog                   = 1000
+nstcalcenergy            = 1000
+nstenergy                = 1000
 ; Output frequency and precision for .xtc file
 nstxout-compressed       = 0
 compressed-x-precision   = 1000
@@ -129,15 +129,15 @@ implicit-solvent         = no
 
 ; OPTIONS FOR WEAK COUPLING ALGORITHMS
 ; Temperature coupling  
-tcoupl                   = v-rescale
+tcoupl                   = no
 nsttcouple               = -1
 nh-chain-length          = 10
 print-nose-hoover-chain-variables = no
 ; Groups to couple separately
-tc-grps                  = system
+tc-grps                  = 
 ; Time constant (ps) and reference temperature (K)
-tau-t                    = 1.0
-ref-t                    = 300
+tau-t                    = 
+ref-t                    = 
 ; pressure coupling     
 pcoupl                   = no
 pcoupltype               = Isotropic

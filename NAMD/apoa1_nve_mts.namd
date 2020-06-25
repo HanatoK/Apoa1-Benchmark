@@ -30,7 +30,7 @@ exclude              scaled1-4
 # constrain hydrogen atoms
 rigidbonds           all
 
-timestep             1.0
+timestep             2.0
 fullElectFrequency   2
 
 numsteps             50000

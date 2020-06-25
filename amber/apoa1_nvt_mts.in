@@ -4,7 +4,7 @@ NVT_Equilibration_MTS
     ntx=1,                  !Read coordinates only
     irest=0,                !Do not restart from previous simulation
     nstlim=100000,          !Number of steps
-    dt=0.001,               !1fs timestep
+    dt=0.002,               !1fs timestep
     ntpr=5000,              !Print energies every 5000 steps
     nrespa=2,               !rRESPA (multi-time stepping)
     ntt=3,                  !Langevin dynamics

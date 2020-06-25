@@ -4,7 +4,7 @@ NVT_Equilibration
     ntx=1,                  !Read coordinates only
     irest=0,                !Do not restart from previous simulation
     nstlim=100000,          !Number of steps
-    dt=0.001,               !1fs timestep
+    dt=0.002,               !1fs timestep
     ntpr=5000,              !Print energies every 5000 steps
     nrespa=1,               !rRESPA is not supported in pmemd.cuda
     ntt=3,                  !Langevin dynamics

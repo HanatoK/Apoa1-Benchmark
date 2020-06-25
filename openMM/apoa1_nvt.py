@@ -25,7 +25,7 @@ psf.setBox(108.8612*u.angstroms, 108.8612*u.angstroms, 77.758*u.angstroms)
 system = psf.createSystem(param, nonbondedMethod=PME, nonbondedCutoff=12*u.angstroms, switchDistance=10*u.angstroms, constraints=HBonds, rigidWater=True, temperature=300.0*u.kelvin)
 # get all nonbonded forces
 nonbonded = [f for f in system.getForces() if isinstance(f, NonbondedForce)][0]
-integrator = LangevinIntegrator(300.0*u.kelvin, 1/u.picosecond, 0.001*u.picoseconds)
+integrator = LangevinIntegrator(300.0*u.kelvin, 1/u.picosecond, 0.002*u.picoseconds)
 #integrator = VerletIntegrator(0.001*u.picoseconds)
 # setup PME grid parameters
 nonbonded.setPMEParameters(0, 108, 108, 80)

@@ -5,7 +5,7 @@
 
 ;Run control
 integrator              = md
-dt                      = 0.001
+dt                      = 0.002
 tinit                   = 0
 nsteps                  = 100000
 comm-mode               = Linear

@@ -45,8 +45,8 @@ MTSList = [(reciprocalIndex, 1)]
 for i in usedForceGroupIndex:
     MTSList.append((i,2))
 print(MTSList)
-# use 2fs timestep
-integrator = MTSIntegrator(2*u.femtoseconds, MTSList)
+# use 4fs timestep
+integrator = MTSIntegrator(4*u.femtoseconds, MTSList)
 # setup PME grid parameters
 nonbonded.setPMEParameters(0, 108, 108, 80)
 simulation = Simulation(psf.topology, system, integrator, platform, properties)
