@@ -21,7 +21,7 @@ properties = {'DeviceIndex': '0', 'Precision': f'{precision}'}
 step = 50000
 psf = CharmmPsfFile('apoa1_merge.psf')
 pdb = PDBFile('apoa1_merge.pdb')
-param = CharmmParameterSet('par_all36_lipid.prm', 'par_all36m_prot.prm', 'top_all36_lipid.rtf', 'top_all36_prot.rtf', 'toppar_water_ions.prm')
+param = CharmmParameterSet('par_all36_lipid.prm', 'par_all36m_prot.prm', 'top_all36_lipid.rtf', 'top_all36_prot.rtf', 'toppar_water_ions.str')
 psf.setBox(108.8612*u.angstroms, 108.8612*u.angstroms, 77.758*u.angstroms)
 system = psf.createSystem(param, nonbondedMethod=PME, nonbondedCutoff=12*u.angstroms, switchDistance=10*u.angstroms, constraints=HBonds, rigidWater=True, temperature=300.0*u.kelvin)
 # get all nonbonded forces
