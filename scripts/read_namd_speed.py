@@ -5,7 +5,12 @@ from math import sqrt
 
 parser = argparse.ArgumentParser()
 parser.add_argument("log", nargs = "+", help = "NAMD log file")
+parser.add_argument("--namd3", action = "store_true", help = "use NAMD 3 single-node input")
 args = parser.parse_args()
+
+namd3 = False
+if args.namd3:
+    namd3 = True
 
 for log_file in args.log:
     avg_speed = 0.0
@@ -15,8 +20,12 @@ for log_file in args.log:
         for line in file_handle:
             if line.find("Benchmark") >= 0:
                 fields = line.split()
-                avg_speed += 1.0 / float(fields[7])
-                avg_square_speed += (1.0 / float(fields[7])) * (1.0 / float(fields[7]))
+                if namd3 is False:
+                    avg_speed += 1.0 / float(fields[7])
+                    avg_square_speed += (1.0 / float(fields[7])) * (1.0 / float(fields[7]))
+                else:
+                    avg_speed += float(fields[7])
+                    avg_square_speed += float(fields[7]) * float(fields[7])
                 count += 1
     avg_speed = avg_speed / count
     avg_square_speed = avg_square_speed / count
