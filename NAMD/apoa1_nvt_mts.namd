@@ -4,7 +4,7 @@ cellBasisVector2     0.0 108.8612 0.0
 cellBasisVector3     0.0 0.0 77.758
 cellOrigin           0.0 0.0 0.0
 
-coordinates          apoa1_merge.pdb
+coordinates          ../structure/apoa1_merge.pdb
 temperature          300
 seed                 74269
 
@@ -33,11 +33,11 @@ if {0} {
     stochRescaleTemp     300
 }
 
-structure            apoa1_merge.psf
+structure            ../structure/apoa1_merge.psf
 paraTypeCharmm       on
-parameters           par_all36_lipid.prm
-parameters           par_all36m_prot.prm
-parameters           toppar_water_ions.prm
+parameters           ../structure/par_all36_lipid.prm
+parameters           ../structure/par_all36m_prot.prm
+parameters           ../structure/toppar_water_ions.prm
 exclude              scaled1-4
 1-4scaling           1.0
 
