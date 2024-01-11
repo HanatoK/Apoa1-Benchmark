@@ -18,7 +18,7 @@ for log_file in args.log:
     count = 0
     with open(log_file, "r") as file_handle:
         for line in file_handle:
-            if line.find("Benchmark") >= 0:
+            if line.startswith("Info: Benchmark time"):
                 fields = line.split()
                 if namd3 is False:
                     avg_speed += 1.0 / float(fields[7])
