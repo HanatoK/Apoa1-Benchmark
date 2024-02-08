@@ -31,7 +31,7 @@ exclude              scaled1-4
 rigidbonds           all
 
 timestep             2.0
-fullElectFrequency   2
+fullElectFrequency   1
 
 numsteps             50000
 outputtiming         5000
