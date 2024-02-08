@@ -12,7 +12,7 @@ switching            on
 switchdist           10
 cutoff               12
 pairlistdist         13.5
-stepspercycle        1000
+# stepspercycle        1000
 
 PME                  on
 PMEGridSizeX         108
@@ -35,12 +35,12 @@ fullElectFrequency   2
 
 numsteps             50000
 outputtiming         5000
-outputEnergies       5000
+outputEnergies       100
 
-margin               8
+# margin               8
 
 outputname           output/
 
+deviceMigration on
 CUDASOAintegrate on
-SOAintegrate on
 
