@@ -51,6 +51,6 @@ integrator = MTSIntegrator(4*u.femtoseconds, MTSList)
 nonbonded.setPMEParameters(0, 108, 108, 80)
 simulation = Simulation(psf.topology, system, integrator, platform, properties)
 simulation.context.setPositions(pdb.positions)
-simulation.reporters.append(StateDataReporter(f'output/nanma_openmm_nve_mts_{precision}.log', 5000, step=True, time=True, remainingTime=True, potentialEnergy=True, kineticEnergy=True, totalEnergy=True, temperature=True, totalSteps=step, speed=True))
+simulation.reporters.append(StateDataReporter(f'output/apoa1_openmm_nve_mts_{precision}.log', 5000, step=True, time=True, remainingTime=True, potentialEnergy=True, kineticEnergy=True, totalEnergy=True, temperature=True, totalSteps=step, speed=True))
 
 simulation.step(step)

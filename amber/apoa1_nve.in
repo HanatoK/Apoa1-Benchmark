@@ -1,4 +1,4 @@
-NVT_Equilibration_MTS
+NVT_Equilibration
   &cntrl
     imin=0,                 !No minimization
     ntx=1,                  !Read coordinates only
@@ -6,10 +6,10 @@ NVT_Equilibration_MTS
     nstlim=100000,          !Number of steps
     dt=0.002,               !2fs timestep
     ntpr=5000,              !Print energies every 5000 steps
-    nrespa=2,               !rRESPA (multi-time stepping)
-    ntt=3,                  !Langevin dynamics
-    temp0=300,              !Thermostat temperature
-    gamma_ln=1.0,           !Friction coefficient
+    nrespa=1,               !rRESPA is not supported in pmemd.cuda
+    ntt=0,                  !Langevin dynamics
+    !temp0=300,              !Thermostat temperature
+    !gamma_ln=1.0,           !Friction coefficient
     tempi=300,              !Initial temperature
     ntp=0,                  !No barostat
     ntc=2,                  !Covalent bonds involving hydrogen are constrained (SHAKE)
